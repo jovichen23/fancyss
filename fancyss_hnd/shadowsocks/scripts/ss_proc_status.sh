@@ -54,6 +54,9 @@ get_dns_name() {
 	9)
 		echo "SmartDNS"
 		;;
+	10)
+		echo "chinadns-ng"
+		;;
 	esac
 }
 
@@ -84,11 +87,12 @@ echo_version() {
 	echo "cdns			1.0		2017年12月09日编译"
 	echo "chinadns1		1.3.2		2017年12月09日编译"
 	echo "chinadns2		2.0.0		2017年12月09日编译"
+	echo "chinadns-ng		v1.0-beta.15	2020年01月02日编译"
 	echo "https_dns_proxy		758f913		2019年02月05日编译"
 	echo "SmartDNS		198d18f1	2020年01月05日编译"
 	echo "httping			2.6		2020年01月06日编译"
-	echo "client_linux_arm5	20180810	kcptun"
-	echo "v2ray			$ss_basic_v2ray_version"
+	echo "client_linux_arm5	20200103	kcptun"
+	echo "v2ray			$ss_basic_v2ray_version		2020年01月05日编译"
 	echo -----------------------------------------------------------
 }
 
@@ -106,6 +110,7 @@ check_status() {
 	CDNS=$(pidof cdns)
 	CHINADNS1=$(pidof chinadns1)
 	CHINADNS=$(pidof chinadns)
+	CHINADNS_NG=$(pidof chinadns-ng)
 	KCPTUN=$(pidof client_linux_arm7)
 	HAPROXY=$(pidof haproxy)
 	V2RAY=$(pidof v2ray)
@@ -186,6 +191,8 @@ check_status() {
 			[ -n "$HDP" ] && echo "https_dns_proxy	工作中	pid：$HDP" || echo "https_dns_proxy	未运行"
 		elif [ "$ss_foreign_dns" == "9" ]; then
 			[ -n "$SMD" ] && echo "SmartDNS	工作中	pid：$SMD" || echo "SmartDNS	未运行"
+		elif [ "$ss_foreign_dns" == "10" ]; then
+			[ -n "${CHINADNS_NG}" ] && echo "chinadns-ng	工作中	pid：${CHINADNS_NG}" || echo "chinadns-ng	未运行"
 		fi
 	fi
 	[ "$ss_dns_china" == "13" ] &&{
