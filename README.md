@@ -21,7 +21,6 @@ wget --no-check-certificate https://raw.githubusercontent.com/hq450/fancyss/mast
 
 ---
 
-
 ## 机型/固件支持（表格版）
 
 > 下面的表格列出了各个不同版本fancyss对固件/平台/架构等的支持情况，以及不同fancyss对一些功能/特性的支持情况，对应的文字说明请见下文。
@@ -30,12 +29,12 @@ wget --no-check-certificate https://raw.githubusercontent.com/hq450/fancyss/mast
 | :-----------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 |   固件来源    |                          koolshare                           |                          koolshare                           |                          koolshare                           |                          koolshare                           |                          koolshare                           |
 |     固件      |                      梅林改版/华硕官改                       |                         梅林384改版                          |                         梅林380改版                          |                           梅林改版                           |                        LEDE by fw867                         |
-|     架构      |                            armv8                             |                            armv7                             |                            armv7                             |                            mipsel                            |                             x64                              |
+|     架构      |                         armv8/armv7                          |                            armv7                             |                            armv7                             |                            mipsel                            |                             x64                              |
 |     平台      |                     hnd/axhnd/axhnd.675x                     |                             arm                              |                             arm                              |                            mipsel                            |                             x64                              |
-|   linux内核   |                     4.1.xx                     |                           2.6.36.4                           |                           2.6.36.4                           |                             2.6                              |                             很新                             |
-|      CPU      |                         bcm490x系列                          |                          bcm4708/9                           |                          bcm4708/9                           |                           bcm4706                            |                          x64架构CPU                          |
+|   linux内核   |                            4.1.xx                            |                           2.6.36.4                           |                           2.6.36.4                           |                             2.6                              |                             很新                             |
+|      CPU      |                       bcm490x/bcm675x                        |                          bcm4708/9                           |                          bcm4708/9                           |                           bcm4706                            |                          x64架构CPU                          |
 |   维护状态    |                            维护中                            |                            维护中                            |                         **停止维护**                         |                         **停止维护**                         |                         **备份留存**                         |
-|   最新版本    |                          **1.8.5**                           |                          **1.0.4**                           |                          **4.2.2**                           |                         **3.0.4？**                          |                          **2.2.2**                           |
+|   最新版本    |                          **1.8.7**                           |                          **1.0.4**                           |                          **4.2.2**                           |                         **3.0.4？**                          |                          **2.2.2**                           |
 |   插件名称    |                           科学上网                           |                           科学上网                           |                           科学上网                           |                           科学上网                           |                            koolss                            |
 |   节点管理    |                      :heavy_check_mark:                      |                      :heavy_check_mark:                      |                      :heavy_check_mark:                      |                      :heavy_check_mark:                      |                      :heavy_check_mark:                      |
 |    ss支持     |                      :heavy_check_mark:                      |                      :heavy_check_mark:                      |                      :heavy_check_mark:                      |                      :heavy_check_mark:                      |                      :heavy_check_mark:                      |
@@ -58,6 +57,9 @@ wget --no-check-certificate https://raw.githubusercontent.com/hq450/fancyss/mast
 |  固件下载-6   | [RAX80 梅林改版](https://koolshare.cn/thread-177255-1-1.html) |                                                              |                                                              |                                                              |                                                              |
 |  固件下载-7   | [TUF-AX3000 官改固件](https://koolshare.cn/thread-179968-1-1.html) |                                                              |                                                              |                                                              |                                                              |
 |  固件下载-8   | [RT-AX86U 官改固件](https://koolshare.cn/thread-181845-1-1.html) |                                                              |                                                              |                                                              |                                                              |
+|  固件下载-9   | [RT-AX82U 官改固件](https://koolshare.cn/thread-xxxxxx-1-1.html) |                                                              |                                                              |                                                              |                                                              |
+|  固件下载-10  | [ZenWiFi AX/灵耀 AX6600M/RT-AX95Q](https://koolshare.cn/thread-187704-1-1.html) |                                                              |                                                              |                                                              |                                                              |
+|  固件下载-11  | [ZenWiFi_XD4/灵耀AX魔方/RT-AX56_XD4](https://koolshare.cn/thread-187744-1-1.html) |                                                              |                                                              |                                                              |                                                              |
 |   更新日志    | [Changelog.txt](https://github.com/hq450/fancyss/blob/master/fancyss_hnd/Changelog.txt) | [Changelog.txt](https://github.com/hq450/fancyss/blob/master/fancyss_arm384/Changelog.txt) | [Changelog.txt](https://github.com/hq450/fancyss/blob/master/fancyss_arm/Changelog.txt) |                             null                             | [Changelog.txt](https://github.com/hq450/fancyss/blob/master/fancyss_X64/Changelog.txt) |
 |  离线包下载   | [fancyss_hnd](https://github.com/hq450/fancyss_history_package/tree/master/fancyss_hnd) | [fancyss_arm384](https://github.com/hq450/fancyss_history_package/tree/master/fancyss_arm384) | [fancyss_arm](https://github.com/hq450/fancyss_history_package/tree/master/fancyss_arm) | [fancyss_mipsel](https://github.com/hq450/fancyss_history_package/tree/master/fancyss_mipsel) | [fancyss_x64](https://github.com/hq450/fancyss_history_package/tree/master/fancyss_X64) |
 
@@ -71,16 +73,19 @@ wget --no-check-certificate https://raw.githubusercontent.com/hq450/fancyss/mast
 
 #### fancyss_hnd 支持机型/固件：
 
-| 机型/固件下载                                                | 类型   | 平台       | CPU     | 架构  | 支持版本 | 皮肤        |
-| ------------------------------------------------------------ | ------ | ---------- | ------- | ----- | -------- | ----------- |
-| [ASUS RT-AC86U](http://koolshare.cn/thread-127878-1-1.html)  | 梅林改 | hnd        | BCM4906 | ARMV8 | 全部     | asuswrt     |
-| [ASUS RT-AX88U](http://koolshare.cn/thread-158199-1-1.html)  | 梅林改 | axhnd      | BCM4908 | ARMV8 | 全部     | asuswrt     |
-| [NETGEAR RAX80](https://koolshare.cn/thread-177255-1-1.html) | 梅林改 | axhnd      | BCM4908 | ARMV8 | 全部     | asuswrt     |
-| [ASUS RT-AC86U](http://koolshare.cn/thread-139965-1-1.html)  | 官改   | hnd        | BCM4906 | ARMV8 | 全部     | rog  (红色) |
-| [ASUS ROG GT-AC5300](http://koolshare.cn/thread-130902-1-1.html) | 官改   | hnd        | BCM4908 | ARMV8 | 全部     | rog  (红色) |
-| [ASUS ROG GT-AX11000](http://koolshare.cn/thread-159465-1-1.html) | 官改   | axhnd      | BCM4908 | ARMV8 | 全部     | rog  (红色) |
-| [ASUS TUF-AX3000](https://koolshare.cn/thread-179968-1-1.html) | 官改   | axhnd.675x | BCM6750 | ARMV7 | ≥ 1.8.3  | tuf（橙色） |
-| [RT-AX86U](https://koolshare.cn/thread-181845-1-1.html)      | 官改   | axhnd.675x | BCM4908 | ARMV8 | ≥ 1.8.3  | asuswrt     |
+| 机型/固件下载                                                | 类型     | 平台       | CPU     | 架构  | 支持版本 | 皮肤               |
+| ------------------------------------------------------------ | -------- | ---------- | ------- | ----- | -------- | ------------------ |
+| [ASUS RT-AC86U](http://koolshare.cn/thread-127878-1-1.html)  | ks梅林改 | hnd        | BCM4906 | ARMV8 | 全部     | asuswrt            |
+| [ASUS RT-AX88U](http://koolshare.cn/thread-158199-1-1.html)  | ks梅林改 | axhnd      | BCM4908 | ARMV8 | 全部     | asuswrt            |
+| [NETGEAR RAX80](https://koolshare.cn/thread-177255-1-1.html) | ks梅林改 | axhnd      | BCM4908 | ARMV8 | 全部     | asuswrt            |
+| [ASUS RT-AC86U](http://koolshare.cn/thread-139965-1-1.html)  | ks官改   | hnd        | BCM4906 | ARMV8 | 全部     | rog  (红色)**[1]** |
+| [ASUS ROG GT-AC5300](http://koolshare.cn/thread-130902-1-1.html) | ks官改   | hnd        | BCM4908 | ARMV8 | 全部     | rog  (红色)        |
+| [ASUS ROG GT-AX11000](http://koolshare.cn/thread-159465-1-1.html) | ks官改   | axhnd      | BCM4908 | ARMV8 | 全部     | rog  (红色)        |
+| [ASUS TUF-AX3000](https://koolshare.cn/thread-179968-1-1.html) | ks官改   | axhnd.675x | BCM6750 | ARMV7 | ≥ 1.8.3  | tuf（橙色）        |
+| [RT-AX86U/RT-AX86U高达版](https://koolshare.cn/thread-181845-1-1.html) | ks官改   | axhnd.675x | BCM4908 | ARMV8 | ≥ 1.8.3  | asuswrt            |
+| [RT-AX82U/RT-AX82U高达版](https://koolshare.cn/thread-xxxxxx-1-1.html) | ks官改   | axhnd.675x | BCM6750 | ARMV7 | ≥ 1.8.4  | asuswrt            |
+| [ZenWiFi AX/灵耀 AX6600M/RT-AX95Q](https://koolshare.cn/thread-187704-1-1.html) | ks官改   | axhnd.675x | BCM6755 | ARMV7 | ≥ 1.8.7  | asuswrt            |
+| [ZenWiFi_XD4/灵耀AX魔方/RT-AX56_XD4](https://koolshare.cn/thread-187744-1-1.html) | ks官改   | axhnd.675x | BCM6755 | ARMV7 | ≥ 1.8.8  | asuswrt            |
 
 #### 注意：
 
@@ -89,8 +94,10 @@ wget --no-check-certificate https://raw.githubusercontent.com/hq450/fancyss/mast
 * 强烈建议在`最新版本的固件`和`最新版本软件中心`上使用fancyss_hnd！
 * RT-AC86U/GT-AC5300/GT-AX11000官改固件使用的是ROG皮肤，插件安装会自动识别机型并安装对应皮肤版本。
 * TUF-AX3000官改固件使用的是TUF橙色皮肤，插件安装会自动识别机型并安装对应皮肤版本。
-* TUF-AX3000暂时不能使用chinadns-ng，smartdns，v2ray-plugin这三个功能（1.8.3），因为这些功能使用的二进制是64位的，而BCM6750作为32位cpu是不能运行的，后期版本将逐渐添加支持。
 * RT-AX86U和TUF-AX3000两款机型因为是较新的官改固件，只有fancyss_hnd 1.8.3及以上版本能正常使用。
+* ZenWiFi AX/灵耀 AX6600M/RT-AX95Q 这三个名字代表的是一个机型，仅支持≥ 1.8.7的fancyss_hnd插件。
+* ZenWiFi_XD4/灵耀AX魔方/RT-AX56_XD4 这三个名字代表的是一个机型，仅支持≥ 1.8.8的fancyss_hnd插件。
+* **[1]**：RT-AC86U从384_81918_koolshare固件版本开始，使用的是asuswrt风格ui，而不是rog风格。
 
 #### 相关链接：
 
