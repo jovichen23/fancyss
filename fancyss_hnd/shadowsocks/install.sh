@@ -6,8 +6,10 @@ source /koolshare/scripts/base.sh
 eval $(dbus export ss)
 alias echo_date='echo 【$(TZ=UTC-8 date -R +%Y年%m月%d日\ %X)】:'
 ROG_86U=0
+BUILDNO=$(nvram get buildno)
 EXT_NU=$(nvram get extendno)
-EXT_NU=${EXT_NU%_*}
+EXT_NU=$(echo ${EXT_NU%_*} | grep -Eo "^[0-9]{1,10}$" )
+[ -z "${EXT_NU}" ] && EXT_NU="0"
 mkdir -p /koolshare/ss
 mkdir -p /tmp/upload
 odmpid=$(nvram get odmpid)
@@ -19,7 +21,7 @@ LINUX_VER=$(uname -r|awk -F"." '{print $1$2}')
 _get_type() {
 	local FWTYPE=$(nvram get extendno|grep koolshare)
 	if [ -d "/koolshare" ];then
-		if [ -n $FWTYPE ];then
+		if [ -n "${FWTYPE}" ];then
 			echo "koolshare官改固件"
 		else
 			echo "koolshare梅林改版固件"
@@ -59,7 +61,7 @@ else
 fi
 
 # 判断固件UI类型
-if [ -n "$(nvram get extendno | grep koolshare)" -a "$(nvram get productid)" == "RT-AC86U" -a "${EXT_NU}" -lt "81918" ];then
+if [ -n "$(nvram get extendno | grep koolshare)" -a "$(nvram get productid)" == "RT-AC86U" -a "${EXT_NU}" -lt "81918" -a "${BUILDNO}" != "386" ];then
 	ROG_86U=1
 fi
 
@@ -174,6 +176,13 @@ if [ "${JFFS_TOTAL}" -le "20000" ];then
 	sed -i 's/\, \"负载均衡设置\"//g' /tmp/shadowsocks/res/ss-menu.js
 	sed -i 's/\, \"Module_shadowsocks_lb\.asp\"//g' /tmp/shadowsocks/res/ss-menu.js
 	echo ".show-btn5, .show-btn6{display: none;}" >> /tmp/shadowsocks/res/shadowsocks.css
+fi
+
+# 386固件全面使用openssl1.1.1，弃用了openssl1.0.0，所以判断使用openssl1.1.1的使用新版本的httping
+if [ -f "/usr/lib/libcrypto.so.1.1" ];then
+	mv /tmp/shadowsocks/bin/httping_openssl_1.1.1 /tmp/shadowsocks/bin/httping
+else
+	rm -rf /tmp/shadowsocks/bin/httping_openssl_1.1.1
 fi
 
 # 检测储存空间是否足够
